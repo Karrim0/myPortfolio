@@ -10,7 +10,7 @@ const ProjectsArray = [
       "Web Developer Portfolio showcasing projects, skills, and contact information.",
     image: PortfolioImg,
     tags: ["React", "TailwindCSS", "React Router DOM", "Lucide-react", "Custom Animations"],
-    demoUrl: "#",
+    demoUrl: "https://github.com/Karrim0/myPortfolio",
     githubUrl: "https://github.com/Karrim0", // ضفتها عشان اللينك بتاع Github
   },
 ];

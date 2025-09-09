@@ -15,7 +15,7 @@ function App() {
     return <Spinner />; 
   }
   return (
-    <BrowserRouter basename="/portfolio">
+    <BrowserRouter basename="/myPortfolio">
       <Routes>
         <Route index element={<Home />} />
         <Route path="*" element={<Notfound />} />
