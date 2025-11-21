@@ -1,4 +1,3 @@
-import { Loader } from "lucide-react";
 import AboutMe from "../AboutMe/AboutMe";
 import Background from "../Background/Background";
 import Contact from "../Contact/Contact";
@@ -11,26 +10,18 @@ import ThemeToggle from "../ThemeToggle/ThemeToggle";
 
 export default function Home() {
   return (
-    <>
-
-      <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
-        {/* Theme Toggle */}
-        <ThemeToggle/>
-        {/* background Effects */}
-        <Background/>
-        {/* Navbar */}
-        <Navbar/>
-        {/* main content */}
-        <main>
-          <HeroSection/>
-          <AboutMe/>
-          <Skills/>
-          <Projects/>
-          <Contact/>
-        </main>
-        {/* Footer */}
-        <Footer/>
-      </div>
-    </>
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
+      <ThemeToggle />
+      <Background />
+      <Navbar />
+      <main>
+        <HeroSection />
+        <AboutMe />
+        <Skills />
+        <Projects />
+        <Contact />
+      </main>
+      <Footer />
+    </div>
   );
 }

@@ -9,44 +9,31 @@ export default function ThemeToggle() {
     const storedTheme = localStorage.getItem("theme");
 
     if (storedTheme) {
-      if (storedTheme === "dark") {
-        setIsDarkMode(true);
-        document.documentElement.classList.add("dark");
-      } else {
-        setIsDarkMode(false);
-        document.documentElement.classList.remove("dark");
-      }
+      const isDark = storedTheme === "dark";
+      setIsDarkMode(isDark);
+      document.documentElement.classList.toggle("dark", isDark);
     } else {
-      if (window.innerWidth <= 640) {
-        setIsDarkMode(true);
-        document.documentElement.classList.add("dark");
-        localStorage.setItem("theme", "dark");
-      } else {
-        setIsDarkMode(false);
-        document.documentElement.classList.remove("dark");
-        localStorage.setItem("theme", "light");
-      }
+      const isMobile = window.innerWidth <= 640;
+      setIsDarkMode(isMobile);
+      document.documentElement.classList.toggle("dark", isMobile);
+      localStorage.setItem("theme", isMobile ? "dark" : "light");
     }
   }, []);
 
   const toggleTheme = () => {
-    if (isDarkMode) {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("theme", "light");
-      setIsDarkMode(false);
-    } else {
-      document.documentElement.classList.add("dark");
-      localStorage.setItem("theme", "dark");
-      setIsDarkMode(true);
-    }
+    const newTheme = !isDarkMode;
+    setIsDarkMode(newTheme);
+    document.documentElement.classList.toggle("dark", newTheme);
+    localStorage.setItem("theme", newTheme ? "dark" : "light");
   };
 
   return (
     <button
       onClick={toggleTheme}
+      aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
       className={cn(
         "fixed max-sm:hidden top-4 right-2 z-50 p-2 rounded-full transition-colors duration-300",
-        "focus:outline-hidden"
+        "focus:outline-none hover:bg-foreground/10"
       )}
     >
       {isDarkMode ? (
