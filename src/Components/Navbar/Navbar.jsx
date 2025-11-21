@@ -35,7 +35,6 @@ export default function Navbar() {
       )}
     >
       <div className="container h-16 flex items-center justify-between">
-        
         <a href="#hero" className="text-xl font-bold flex items-center gap-1">
           <span className="text-foreground">Kareem</span>
           <span className="text-primary">Portfolio</span>

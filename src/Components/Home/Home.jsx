@@ -11,7 +11,7 @@ import ThemeToggle from "../ThemeToggle/ThemeToggle";
 export default function Home() {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
-      <ThemeToggle />
+
       <Background />
       <Navbar />
       <main>

@@ -32,7 +32,7 @@ export default function ThemeToggle() {
       onClick={toggleTheme}
       aria-label={isDarkMode ? "Switch to light mode" : "Switch to dark mode"}
       className={cn(
-        "fixed max-sm:hidden top-4 right-2 z-50 p-2 rounded-full transition-colors duration-300",
+        "p-2 rounded-full transition-colors duration-300",
         "focus:outline-none hover:bg-foreground/10"
       )}
     >
